@@ -10,10 +10,10 @@ use tokio;
 #[tokio::test]
 async fn test_get_user_profile() {
 	//env::set_var("RUST_BACKTRACE", "1");
-	let mut server = mockito::Server::new();
+	let mut server = mockito::Server::new_with_port(0);
 	let domain = server.url();
 	
-	let _m = server.mock("GET", "/")
+	let _m = server.mock("GET", "/userinfo")
 		.with_status(200)
 		.with_body("test user profile")
 		.create();
@@ -22,7 +22,7 @@ async fn test_get_user_profile() {
 		domain: domain.to_string(),
 		client_id: "test_client_id".to_string(),
 		client_secret: "test_client_secret".to_string(),
-		audience: "https://dev-7rd32e8tkyoho4nc.us.auth0.com/api/v2/".to_string(),
+		audience: "test_api_url".to_string(),
 		client: Client::new(),
 	};
 	

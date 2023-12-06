@@ -56,7 +56,7 @@ impl Auth0Client {
 	/// * `access_token` - The access token.
 	///
 	pub async fn get_user_profile(&self, access_token: &str) -> Result<String, Box<dyn Error>> {
-		let url = format!("https://{}/userinfo", self.domain);
+		let url = format!("{}/userinfo", self.domain);
 		let response = self.client.get(&url)
 			.bearer_auth(access_token)
 			.send()
