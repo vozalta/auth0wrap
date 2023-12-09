@@ -1,7 +1,7 @@
 #![allow(non_snake_case)]
 
 //			Modules
-use std::error::Error;
+
 use reqwest::Client;
 
 //  Structs

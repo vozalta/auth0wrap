@@ -7,7 +7,7 @@
 mod tests;
 
 //  Packages
-use reqwest::Client;
+
 use std::error::Error;
 use super::auth0_client::Auth0Client;
 

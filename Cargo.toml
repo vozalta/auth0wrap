@@ -1,9 +1,20 @@
 [package]
 name = "auth0wrap"
 version = "0.1.0"
+description = "A wrapper for the Auth0 Authentication API"
+categories = ["authentication", "auth0", "OAuth2"]
 edition = "2021"
+license = "MIT"
+authors = ["James Binford <james@vozalta.io>"]
+repository = "https://github.com/jamesbinford/auth0wrap"
+readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.release]
+strip = true     # Automatically strip symbols from the binary
+opt-level = 3    # Maximum optimisation (this is the cargo default)
+lto = "thin"     # Enable link-time optimisation (fast)
 
 [dependencies]
 figment = {version = "0.10.12", features = ["toml", "json", "env"], default-features = false}
