@@ -3,6 +3,7 @@
 //		Tests
 use super::*;
 use std::env;
+use reqwest::Client;
 
 use tokio;
 
