@@ -1,6 +1,6 @@
 [package]
 name = "auth0wrap"
-version = "0.1.0"
+version = "0.1.1"
 description = "A wrapper for the Auth0 Authentication API"
 categories = ["authentication", "auth0", "OAuth2"]
 edition = "2021"
